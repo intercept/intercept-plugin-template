@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.6)
+cmake_minimum_required (VERSION 3.8)
 
 #----Make changes here
 
@@ -8,6 +8,9 @@ project (template-plugin)
 #This setting enables the use of the engine string type instead of converting to std::string.
 #Enabling this results in better performance when handling strings to SQF commands.
 option(USE_ENGINE_TYPES "USE_ENGINE_TYPES" OFF)
+
+#Which version of Intercept to build against, branch/commit/tag
+set(INTERCEPT_VERSION "dfa2ce681154337a1640ea7fa2d00576fb44349b")
 
 #----Don't change anything below this line
 
@@ -39,3 +42,15 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
 
 add_subdirectory(src)
+
+include(ExternalProject)
+
+# Download Intercept library to vendor folder
+ExternalProject_Add(
+    intercept
+    PREFIX ${CMAKE_CURRENT_LIST_DIR}/vendor/intercept
+    URL https://github.com/intercept/intercept/archive/${INTERCEPT_VERSION}.tar.gz
+    BUILD_COMMAND ""
+    CONFIGURE_COMMAND ""
+    INSTALL_COMMAND ""
+)

@@ -52,3 +52,6 @@ CTestTestfile.cmake
 
 # JetBrains
 .idea/
+
+# Intercept library
+vendor/intercept/
