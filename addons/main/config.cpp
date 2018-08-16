@@ -16,7 +16,7 @@ class CfgPatches {
 class Intercept {
     class Dedmen { //Change this. It's either the name of your project if you have more than one plugin. Or just your name.
         class template_plugin { //Change this.
-            pluginName = "Intercept Template Plugin"; //Change this.
+            pluginName = "template-plugin"; //Change this.
         };
     };
 };
