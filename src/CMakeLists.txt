@@ -15,8 +15,8 @@ SOURCE_GROUP("src" FILES ${INTERCEPT_PLUGIN_SOURCES})
 #----Don't change anything below this line
 
 
-#include the Intercept headers from the submodule
-set(INTERCEPT_CLIENT_PATH "${CMAKE_SOURCE_DIR}/intercept/src/client")
+#include the Intercept headers from the vendored library
+set(INTERCEPT_CLIENT_PATH "${CMAKE_SOURCE_DIR}/vendor/intercept/src/intercept/src/client")
 
 set(INTERCEPT_INCLUDE_PATH "${INTERCEPT_CLIENT_PATH}/headers" "${INTERCEPT_CLIENT_PATH}/headers/shared" "${INTERCEPT_CLIENT_PATH}/headers/client/" "${INTERCEPT_CLIENT_PATH}/headers/client/sqf")
 
